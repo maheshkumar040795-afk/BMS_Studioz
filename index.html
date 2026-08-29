@@ -87,6 +87,17 @@ section{position:relative;z-index:1;padding:110px 7%;}
 .card:hover .icon{transform:scale(1.15) rotateY(15deg);}
 .card h4{font-family:'Playfair Display',serif;font-size:1.15rem;letter-spacing:1.5px;margin-bottom:12px;color:var(--gold-light);text-transform:uppercase;}
 .card p{color:#888;font-size:.9rem;line-height:1.8;}
+/* ── SERVICE FLIP CARD ── */
+.card-3d-wrap.flip-card{height:320px;}
+.flip-card-inner{position:relative;width:100%;height:100%;transition:transform .7s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d;}
+.flip-card:hover .flip-card-inner{transform:rotateY(180deg);}
+.flip-card-front,.flip-card-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.flip-card-front{transform:rotateY(0deg);}
+.flip-card-back{transform:rotateY(180deg);border-radius:12px;overflow:hidden;border:1px solid rgba(212,175,55,.3);box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 40px rgba(212,175,55,.15);background:#0d0d0d;}
+.flip-card-back img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.flip-back-overlay{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;padding:24px 20px;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.1) 55%,rgba(0,0,0,.3) 100%);}
+.flip-back-overlay h4{font-family:'Playfair Display',serif;font-size:1.05rem;letter-spacing:1.5px;color:var(--gold-light);text-transform:uppercase;text-align:center;margin:0;}
+@media(hover:none){.flip-card:active .flip-card-inner{transform:rotateY(180deg);}}
 .about-wrap{display:flex;flex-wrap:wrap;gap:70px;align-items:center;justify-content:center;}
 /* ── FOUNDER FRAME ── */
 .about-img-3d{flex:1 1 340px;max-width:420px;perspective:900px;}
@@ -348,12 +359,30 @@ footer .copy{color:#444;margin-top:16px;font-size:.78rem;}
   <h2 class="section-title reveal">Our <span>Services</span></h2>
   <div class="gold-line reveal"></div>
   <div class="grid reveal">
-    <div class="card-3d-wrap"><div class="card" data-tilt><span class="icon">&#128141;</span><h4>Wedding Photography</h4><p>Timeless, emotional storytelling capturing every sacred moment of your special day with artistic flair.</p></div></div>
-    <div class="card-3d-wrap"><div class="card" data-tilt><span class="icon">&#127916;</span><h4>Cinematic Videography</h4><p>Breathtaking 4K cinematic videos with professional color grading and immersive sound design.</p></div></div>
-    <div class="card-3d-wrap"><div class="card" data-tilt><span class="icon">&#128100;</span><h4>Portrait Sessions</h4><p>Studio and outdoor portrait sessions that capture your personality, confidence, and true essence.</p></div></div>
-    <div class="card-3d-wrap"><div class="card" data-tilt><span class="icon">&#127881;</span><h4>Events &amp; Celebrations</h4><p>Birthday parties, engagements, baby showers &mdash; we document your milestones with precision.</p></div></div>
-    <div class="card-3d-wrap"><div class="card" data-tilt><span class="icon">&#127970;</span><h4>Corporate Photography</h4><p>Professional corporate headshots, team events, product launches and brand campaigns.</p></div></div>
-    <div class="card-3d-wrap"><div class="card" data-tilt><span class="icon">&#127749;</span><h4>Pre-Wedding Shoots</h4><p>Romantic pre-wedding stories shot at iconic locations with tailored themes and concepts.</p></div></div>
+    <div class="card-3d-wrap flip-card"><div class="flip-card-inner">
+      <div class="card flip-card-front"><span class="icon">&#128141;</span><h4>Wedding Photography</h4><p>Timeless, emotional storytelling capturing every sacred moment of your special day with artistic flair.</p></div>
+      <div class="flip-card-back"><img src="https://res.cloudinary.com/dt97offnl/image/upload/f_auto,q_auto:good,w_600/v1787980224/Wedding_Photography_keuvfm.jpg" alt="Wedding Photography by BMS Photography Studioz" loading="lazy"><div class="flip-back-overlay"><h4>Wedding Photography</h4></div></div>
+    </div></div>
+    <div class="card-3d-wrap flip-card"><div class="flip-card-inner">
+      <div class="card flip-card-front"><span class="icon">&#127916;</span><h4>Cinematic Videography</h4><p>Breathtaking 4K cinematic videos with professional color grading and immersive sound design.</p></div>
+      <div class="flip-card-back"><img src="https://res.cloudinary.com/dt97offnl/image/upload/f_auto,q_auto:good,w_600/v1787980224/Cinematic_Videography_fovisz.jpg" alt="Cinematic Videography by BMS Photography Studioz" loading="lazy"><div class="flip-back-overlay"><h4>Cinematic Videography</h4></div></div>
+    </div></div>
+    <div class="card-3d-wrap flip-card"><div class="flip-card-inner">
+      <div class="card flip-card-front"><span class="icon">&#128100;</span><h4>Portrait Sessions</h4><p>Studio and outdoor portrait sessions that capture your personality, confidence, and true essence.</p></div>
+      <div class="flip-card-back"><img src="https://res.cloudinary.com/dt97offnl/image/upload/f_auto,q_auto:good,w_600/v1787980225/Portrait_Sessions_smnbjj.jpg" alt="Portrait Sessions by BMS Photography Studioz" loading="lazy"><div class="flip-back-overlay"><h4>Portrait Sessions</h4></div></div>
+    </div></div>
+    <div class="card-3d-wrap flip-card"><div class="flip-card-inner">
+      <div class="card flip-card-front"><span class="icon">&#127881;</span><h4>Events &amp; Celebrations</h4><p>Birthday parties, engagements, baby showers &mdash; we document your milestones with precision.</p></div>
+      <div class="flip-card-back"><img src="https://res.cloudinary.com/dt97offnl/image/upload/f_auto,q_auto:good,w_600/v1787980225/Events_Celebrations_vncffz.jpg" alt="Events and Celebrations by BMS Photography Studioz" loading="lazy"><div class="flip-back-overlay"><h4>Events &amp; Celebrations</h4></div></div>
+    </div></div>
+    <div class="card-3d-wrap flip-card"><div class="flip-card-inner">
+      <div class="card flip-card-front"><span class="icon">&#127970;</span><h4>Corporate Photography</h4><p>Professional corporate headshots, team events, product launches and brand campaigns.</p></div>
+      <div class="flip-card-back"><img src="https://res.cloudinary.com/dt97offnl/image/upload/f_auto,q_auto:good,w_600/v1787980224/Corporate_Photography_vmgsas.jpg" alt="Corporate Photography by BMS Photography Studioz" loading="lazy"><div class="flip-back-overlay"><h4>Corporate Photography</h4></div></div>
+    </div></div>
+    <div class="card-3d-wrap flip-card"><div class="flip-card-inner">
+      <div class="card flip-card-front"><span class="icon">&#127749;</span><h4>Pre-Wedding Shoots</h4><p>Romantic pre-wedding stories shot at iconic locations with tailored themes and concepts.</p></div>
+      <div class="flip-card-back"><img src="https://res.cloudinary.com/dt97offnl/image/upload/f_auto,q_auto:good,w_600/v1787980224/Pre-Wedding_Shoots_uondb5.jpg" alt="Pre-Wedding Shoots by BMS Photography Studioz" loading="lazy"><div class="flip-back-overlay"><h4>Pre-Wedding Shoots</h4></div></div>
+    </div></div>
   </div>
 </section>
 
@@ -465,6 +494,17 @@ footer .copy{color:#444;margin-top:16px;font-size:.78rem;}
       <div class="team-info">
         <div class="t-line"></div>
         <h4 class="team-name">Gokul</h4>
+        <p class="team-role">Traditional Photographer</p>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-frame">
+        <img src="https://res.cloudinary.com/dt97offnl/image/upload/f_auto,q_auto:good,w_600/v1787980941/1.jpg_fwsetr.jpg" alt="Harish - Traditional Photographer, BMS Photography Studioz" loading="lazy">
+        <span class="bar-tl"></span><span class="bar-br"></span><span class="t-ring"></span>
+      </div>
+      <div class="team-info">
+        <div class="t-line"></div>
+        <h4 class="team-name">Harish</h4>
         <p class="team-role">Traditional Photographer</p>
       </div>
     </div>
